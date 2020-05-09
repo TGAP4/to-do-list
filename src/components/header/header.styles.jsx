@@ -5,18 +5,10 @@ export const Header = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height 140px;
+  height 135px;
   position: relative;
   color: #70667d;
   letter-spacing: 0.05rem;
-`;
-
-export const Logo = styled.img`
-  height: 30px;
-  width: auto;
-  position: absolute;
-  top: 40px;
-  left: 40px;
 `;
 
 export const Title = styled.div`

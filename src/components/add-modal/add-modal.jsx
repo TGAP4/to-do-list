@@ -7,9 +7,10 @@ import {addJob} from '../../redux/jobs/jobs-actions';
 
 
 const AddModal = ({toggleAddModal, addJob}) => {
-  const [jobInfo, setJobInfo] = useState({
-    company: '',
-    position: '',
+  const [taskInfo, setTaskInfo] = useState({
+    taskName: '',
+    additionalInfo: '',
+    priority: '',
     date: null
   });
 
@@ -20,44 +21,54 @@ const AddModal = ({toggleAddModal, addJob}) => {
 
   const handleChange = event => {
     const {name, value} = event.target;
-    setJobInfo({...jobInfo, [name]: value});
+    setTaskInfo({...taskInfo, [name]: value});
   };
 
   const handleSubmit = () => {
-    if (jobInfo.company && jobInfo.position) {
+    if (
+      taskInfo.taskName 
+      && Math.ceil(taskInfo.priority / 5) === 1 
+      && Number.isInteger(Number(taskInfo.priority))
+    ) {
       addJob({
-        ...jobInfo, 
+        ...taskInfo, 
         date: new Date().getTime(),
         color: randomColor
       });
+      setTaskInfo({
+        taskName: '',
+        additionalInfo: ''
+      });
+      toggleAddModal();
     }
-    setJobInfo({
-      company: '',
-      position: ''
-    });
-    toggleAddModal();
   };
 
   return (
     <>
       <S.Backdrop onClick={toggleAddModal} />
       <S.Popup>
-        <S.Title>Add a job</S.Title>
+        <S.Title>Add a task</S.Title>
         <S.XButton onClick={toggleAddModal}>x</S.XButton>
         <S.Input 
-          name='company'
-          placeholder='Company Name'
-          value={jobInfo.company} 
+          name='taskName'
+          placeholder='Task Name'
+          value={taskInfo.taskName} 
           onChange={handleChange}
         />
         <S.Input 
-          name='position'
-          placeholder='Job Title'
-          value={jobInfo.position}
+          name='additionalInfo'
+          placeholder='Additional Info'
+          value={taskInfo.additionalInfo}
+          onChange={handleChange}
+        />
+        <S.Input
+          name='priority'
+          placeholder='Priority Level (1-5)'
+          value={taskInfo.priority}
           onChange={handleChange}
         />
         <S.SubmitButton onClick={handleSubmit}>
-          Continue
+          Submit
         </S.SubmitButton>
       </S.Popup>
     </>

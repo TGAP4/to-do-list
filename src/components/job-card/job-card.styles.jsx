@@ -21,16 +21,32 @@ const getColor = ({color: {shuffle, modifier}}) => {
   }
 }
 
+const getPriorityColor = ({priority}) => {
+  switch (priority) {
+    case '1':
+      return '#777777';
+    case '2':
+      return 'green';
+    case '3':
+      return '#1515D3';
+    case '4':
+      return '#8A018A';
+    case '5':
+      return '#B60101';
+    default:
+      return 'black';
+  }
+};
+
 export const TrashButton = styled.img`
   width: 25px;
-  height: auto;
+  height: 25px;
   padding: 3px;
-  background-size: cover;
   border-radius: 20px;
+  visibility: hidden;
   position: absolute;
   top: 13px;
   right: 15px;
-  visibility: hidden;
 
   &:hover {
     background-color: #dddddd;
@@ -55,12 +71,13 @@ export const JobCard = styled.div`
   }
 `;
 
-export const Logo = styled.div`
+export const Priority = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 40px;
   height: 40px;
+  padding-bottom: 3px;
   border-radius: 40px;
   background-color: white;
   position: absolute;
@@ -68,7 +85,7 @@ export const Logo = styled.div`
   left: 20px;
   font-size: 30px;
   font-weight: 900;
-  color: gray;
+  color: ${getPriorityColor};
 `;
 
 export const JobInfo = styled.div`
@@ -80,7 +97,7 @@ export const JobInfo = styled.div`
   left: 80px;
 `;
 
-export const CompanyName = styled.div`
+export const TaskName = styled.div`
   font-size: 1.1em;
   font-weight: 600;
   margin-bottom: 5px;

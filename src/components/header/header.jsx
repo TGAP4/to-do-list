@@ -12,9 +12,8 @@ const Header = ({numJobs}) => {
   return (
     <>
       <S.Header>
-        <S.Logo src='https://www.iconbunny.com/icons/media/catalog/product/1/8/1856.1-magic-wand-tool-icon-iconbunny.jpg' alt='Logo' />
-        <S.Title>WISHLIST</S.Title>
-        <span>{numJobs} JOBS</span>
+        <S.Title>TO-DO LIST</S.Title>
+        <span>{numJobs} TASK{numJobs > 1 ? 'S': ''}</span>
       </S.Header>
       <AddButton />
     </>

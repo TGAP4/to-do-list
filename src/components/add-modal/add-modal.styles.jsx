@@ -13,7 +13,7 @@ export const Popup = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 350px;
+  padding: 45px 0;
   width: 350px;
   background-color: white;
   border-radius: 5px;
@@ -26,7 +26,7 @@ export const Popup = styled.div`
 export const Title = styled.div`
   font-size: 30px;
   font-weight: 600;
-  margin: 60px 0 30px;
+  margin: 10px 0 30px;
 `;
 
 export const XButton = styled.div`

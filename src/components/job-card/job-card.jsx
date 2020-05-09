@@ -6,32 +6,33 @@ import {createStructuredSelector} from 'reselect';
 import {selectVisibleDeleteModal} from '../../redux/modals/modals-selectors';
 import {toggleDeleteModal} from '../../redux/modals/modals-actions';
 
+import {getTimeDiff} from '../../utils';
+
 import DeleteModal from '../delete-modal/delete-modal';
 
 
-const JobCard = ({company, position, date, color, id, toggleDeleteModal, visibleDeleteModal}) => {
-  let timeDiff = Math.round((new Date().getTime() - date) / 60000);
-  const logo = company[0].toUpperCase();
+const JobCard = ({taskName, additionalInfo, date, color, id, priority, toggleDeleteModal, visibleDeleteModal}) => {
+  const timeDiff = getTimeDiff(date);
   const currentJob = {
-    company: company,
-    position: position
+    taskName: taskName,
+    additionalInfo: additionalInfo
   };
   
   return (
     <>
       {visibleDeleteModal === id ? <DeleteModal currentJob={currentJob} /> : null}
       <S.JobCard color={color}>
-        <S.Logo>{logo}</S.Logo>
+        <S.Priority priority={priority}>{priority}</S.Priority>
         <S.TrashButton 
           src='https://cdn1.iconfinder.com/data/icons/shooping/64/trash_can-512.png' 
           alt='Trash Icon'
           onClick={() => toggleDeleteModal(id)}  
         />
         <S.JobInfo>
-          <S.CompanyName>{company}</S.CompanyName>
-          <span>{position}</span>
+          <S.TaskName>{taskName}</S.TaskName>
+          <span>{additionalInfo}</span>
         </S.JobInfo>
-        <S.TimeAdded>added {timeDiff} minutes ago</S.TimeAdded>
+        <S.TimeAdded>added {timeDiff}</S.TimeAdded>
       </S.JobCard>
     </>
   );

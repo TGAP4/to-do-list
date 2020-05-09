@@ -1,18 +1,17 @@
 export const addJob = (jobsList, jobToAdd) => {
   const newJobsList = [...jobsList];
   if (!jobsList.find(job => 
-    job.company.toLowerCase() === jobToAdd.company.toLowerCase() 
-    && job.position.toLowerCase() === jobToAdd.position.toLowerCase()
+    job.taskName.toLowerCase() === jobToAdd.taskName.toLowerCase() 
   )) {
     newJobsList.push(jobToAdd);
   }
+  newJobsList.sort((a,b) => b.priority - a.priority);
   return newJobsList;
 }
 
 export const deleteJob = (jobsList, jobToDelete) => {
   const newJobsList = jobsList.filter(job => 
-    job.company.toLowerCase() !== jobToDelete.company.toLowerCase() 
-    || job.position.toLowerCase() !== jobToDelete.position.toLowerCase()
+    job.taskName.toLowerCase() !== jobToDelete.taskName.toLowerCase() 
   );
   return newJobsList;
 }

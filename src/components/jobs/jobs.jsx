@@ -13,8 +13,9 @@ const Jobs = ({jobsList}) => {
     <S.Jobs>
       {jobsList.map((job, i) =>
         <JobCard 
-          company={job.company} 
-          position={job.position}
+          taskName={job.taskName} 
+          additionalInfo={job.additionalInfo}
+          priority={job.priority}
           date={job.date}
           color={job.color}
           key={i}
