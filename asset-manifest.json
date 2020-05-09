@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/to-do-list/static/css/main.0751910c.chunk.css",
+    "main.js": "/to-do-list/static/js/main.b2122086.chunk.js",
+    "main.js.map": "/to-do-list/static/js/main.b2122086.chunk.js.map",
+    "runtime-main.js": "/to-do-list/static/js/runtime-main.47aa806f.js",
+    "runtime-main.js.map": "/to-do-list/static/js/runtime-main.47aa806f.js.map",
+    "static/js/2.60f2e126.chunk.js": "/to-do-list/static/js/2.60f2e126.chunk.js",
+    "static/js/2.60f2e126.chunk.js.map": "/to-do-list/static/js/2.60f2e126.chunk.js.map",
+    "index.html": "/to-do-list/index.html",
+    "precache-manifest.f6f080fc0525e5c46437ffdf78043b4b.js": "/to-do-list/precache-manifest.f6f080fc0525e5c46437ffdf78043b4b.js",
+    "service-worker.js": "/to-do-list/service-worker.js",
+    "static/css/main.0751910c.chunk.css.map": "/to-do-list/static/css/main.0751910c.chunk.css.map",
+    "static/js/2.60f2e126.chunk.js.LICENSE.txt": "/to-do-list/static/js/2.60f2e126.chunk.js.LICENSE.txt",
+    "static/media/SourceSansPro-Regular.ttf": "/to-do-list/static/media/SourceSansPro-Regular.c1678b46.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.47aa806f.js",
+    "static/js/2.60f2e126.chunk.js",
+    "static/css/main.0751910c.chunk.css",
+    "static/js/main.b2122086.chunk.js"
+  ]
+}
