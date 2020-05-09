@@ -1,0 +1,6 @@
+const Types = {
+  TOGGLE_ADD_MODAL: 'TOGGLE_ADD_MODAL',
+  TOGGLE_DELETE_MODAL: 'TOGGLE_DELETE_MODAL'
+};
+
+export default Types;
